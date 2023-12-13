@@ -14,6 +14,15 @@
 		70479F6C2B28490E0031C364 /* DaylyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70479F6B2B28490E0031C364 /* DaylyTests.swift */; };
 		70479F762B28490E0031C364 /* DaylyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70479F752B28490E0031C364 /* DaylyUITests.swift */; };
 		70479F782B28490E0031C364 /* DaylyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70479F772B28490E0031C364 /* DaylyUITestsLaunchTests.swift */; };
+		705353F22B28900C00B18DB3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705353F12B28900B00B18DB3 /* CalendarView.swift */; };
+		705353F52B28967400B18DB3 /* DLActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705353F42B28967400B18DB3 /* DLActivity.swift */; };
+		705353F82B2899AB00B18DB3 /* DLActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705353F72B2899AB00B18DB3 /* DLActivitiesViewModel.swift */; };
+		705353FA2B289A4A00B18DB3 /* DLCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705353F92B289A4A00B18DB3 /* DLCalendarViewModel.swift */; };
+		705353FC2B289A6600B18DB3 /* DLDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705353FB2B289A6600B18DB3 /* DLDayViewModel.swift */; };
+		705353FF2B28A7D100B18DB3 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705353FE2B28A7D100B18DB3 /* DayView.swift */; };
+		705354012B28AA1A00B18DB3 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705354002B28AA1A00B18DB3 /* StreakView.swift */; };
+		705354032B28BB8500B18DB3 /* AddDailyActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705354022B28BB8500B18DB3 /* AddDailyActivityView.swift */; };
+		705354052B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705354042B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +53,15 @@
 		70479F712B28490E0031C364 /* DaylyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaylyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70479F752B28490E0031C364 /* DaylyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaylyUITests.swift; sourceTree = "<group>"; };
 		70479F772B28490E0031C364 /* DaylyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaylyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		705353F12B28900B00B18DB3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		705353F42B28967400B18DB3 /* DLActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLActivity.swift; sourceTree = "<group>"; };
+		705353F72B2899AB00B18DB3 /* DLActivitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLActivitiesViewModel.swift; sourceTree = "<group>"; };
+		705353F92B289A4A00B18DB3 /* DLCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLCalendarViewModel.swift; sourceTree = "<group>"; };
+		705353FB2B289A6600B18DB3 /* DLDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLDayViewModel.swift; sourceTree = "<group>"; };
+		705353FE2B28A7D100B18DB3 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		705354002B28AA1A00B18DB3 /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
+		705354022B28BB8500B18DB3 /* AddDailyActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDailyActivityView.swift; sourceTree = "<group>"; };
+		705354042B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLSettingSwitchToggleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				70479F5A2B28490D0031C364 /* DaylyApp.swift */,
-				70479F5C2B28490D0031C364 /* ContentView.swift */,
+				705353FD2B28A67D00B18DB3 /* Views */,
+				705353F62B2898DB00B18DB3 /* ViewModel */,
+				705353F32B28966800B18DB3 /* Model */,
 				70479F5E2B28490E0031C364 /* Assets.xcassets */,
 				70479F602B28490E0031C364 /* Preview Content */,
 			);
@@ -125,6 +145,37 @@
 				70479F772B28490E0031C364 /* DaylyUITestsLaunchTests.swift */,
 			);
 			path = DaylyUITests;
+			sourceTree = "<group>";
+		};
+		705353F32B28966800B18DB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				705353F42B28967400B18DB3 /* DLActivity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		705353F62B2898DB00B18DB3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				705353F72B2899AB00B18DB3 /* DLActivitiesViewModel.swift */,
+				705353F92B289A4A00B18DB3 /* DLCalendarViewModel.swift */,
+				705353FB2B289A6600B18DB3 /* DLDayViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		705353FD2B28A67D00B18DB3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				70479F5C2B28490D0031C364 /* ContentView.swift */,
+				705354022B28BB8500B18DB3 /* AddDailyActivityView.swift */,
+				705353F12B28900B00B18DB3 /* CalendarView.swift */,
+				705354002B28AA1A00B18DB3 /* StreakView.swift */,
+				705353FE2B28A7D100B18DB3 /* DayView.swift */,
+				705354042B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +308,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				705353F82B2899AB00B18DB3 /* DLActivitiesViewModel.swift in Sources */,
+				705354052B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift in Sources */,
+				705353FF2B28A7D100B18DB3 /* DayView.swift in Sources */,
+				705353FC2B289A6600B18DB3 /* DLDayViewModel.swift in Sources */,
+				705354012B28AA1A00B18DB3 /* StreakView.swift in Sources */,
 				70479F5D2B28490D0031C364 /* ContentView.swift in Sources */,
+				705353FA2B289A4A00B18DB3 /* DLCalendarViewModel.swift in Sources */,
 				70479F5B2B28490D0031C364 /* DaylyApp.swift in Sources */,
+				705353F52B28967400B18DB3 /* DLActivity.swift in Sources */,
+				705353F22B28900C00B18DB3 /* CalendarView.swift in Sources */,
+				705354032B28BB8500B18DB3 /* AddDailyActivityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
