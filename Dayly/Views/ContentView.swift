@@ -10,15 +10,35 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var viewModel: DLActivitiesViewModel
+    @State private var isPresentingAddTaskView = false
     
     var body: some View {
-        VStack {
-            CalendarView(calendar: Calendar(identifier: .gregorian))
+        NavigationView {
+            VStack {
+                CalendarView(calendar: Calendar(identifier: .gregorian))
+            }
+            .padding()
+            .onAppear {
+                viewModel.load()
+            }
+            .navigationTitle("This Month")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        // Perform an action
+                        print("Add Item")
+                        isPresentingAddTaskView = true
+                        
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(isPresented: $isPresentingAddTaskView) {
+                AddDailyActivityView(title: "", date: Date(), reminder: true)
+            }
         }
-        .padding()
-        .onAppear {
-            viewModel.load()
-        }
+        
     }
 }
 
