@@ -153,7 +153,7 @@ struct CalendarView: View {
     func dateHasEvents(date: Date) -> Bool {
         
         for activity in activities {
-            if calendar.isDate(date, inSameDayAs: activity.dateTime ?? Date()) {
+            if calendar.isDate(date, inSameDayAs: activity.startDate ?? Date()) {
                 return true
             }
         }
@@ -164,7 +164,7 @@ struct CalendarView: View {
     func numberOfEventsInDate(date: Date) -> Int {
         var count: Int = 0
         for activity in activities {
-            if calendar.isDate(date, inSameDayAs: activity.dateTime ?? Date()) {
+            if calendar.isDate(date, inSameDayAs: activity.startDate ?? Date()) {
                 count += 1
             }
         }

@@ -17,8 +17,8 @@ class DLActivitiesViewModel: ObservableObject {
     
     func load() {
         self.activities = [
-            DLActivity(title: "Yoga", description: "Practice Yoga Kriya", dateTime: nil, reminder: true),
-            DLActivity(title: "Carnatic", description: "Practice Jantai Varisai", dateTime: nil, reminder: false)
+            DLActivity(id: UUID(), title: "Yoga", reminder: true, streak: 2, completed: false),
+            DLActivity(id: UUID(), title: "Carnatic Music", reminder: true, streak: 4, completed: false)
         ]
     }
     
