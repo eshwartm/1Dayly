@@ -11,11 +11,13 @@ struct ContentView: View {
     
     @ObservedObject var viewModel: DLActivitiesViewModel
     @State private var isPresentingAddTaskView = false
+    @State private var dayStreak: Int = 0
     
     var body: some View {
         NavigationView {
             VStack {
                 CalendarView(calendar: Calendar(identifier: .gregorian))
+                StreakView(daysStreak: $dayStreak)
             }
             .padding()
             .onAppear {

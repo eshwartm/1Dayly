@@ -13,7 +13,7 @@ struct StreakView: View {
     
     var body: some View {
         HStack {
-            Text("Streaks")
+            Text("Streak")
             Spacer()
             Text("\(daysStreak)")
         }
