@@ -1,5 +1,5 @@
 //
-//  DLActivity.swift
+//  DLTask.swift
 //  Dayly
 //
 //  Created by Eshwar Ramesh on 12/12/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DLActivityProtocol {
+protocol DLTaskProtocol {
     var id: UUID {get}
     var title: String {get}
     var description: String? {get}
@@ -15,15 +15,12 @@ protocol DLActivityProtocol {
     var streak: Int {get}
     var startDate: Date? {get}
     var endDate: Date? {get}
+    var streakCompleted: Bool {get}
     
-    func markCompletedFor(date: Date)
+    mutating func markCompletedFor(date: Date)
 }
 
-struct DLActivities {
-    var activities: [DLActivity]
-}
-
-struct DLActivity: DLActivityProtocol, Identifiable {
+struct DLTask: DLTaskProtocol, Identifiable {
     
     var id: UUID
     var title: String
@@ -32,9 +29,65 @@ struct DLActivity: DLActivityProtocol, Identifiable {
     var startDate: Date?
     var endDate: Date?
     var streak: Int
-    var completed: Bool
+    var latestCompletionDate: Date?
+    var streakCompleted: Bool
         
-    func markCompletedFor(date: Date) {
+    mutating func markCompletedFor(date: Date) {
+        self.latestCompletionDate = date
+    }
+}
+
+struct DLTasks {
+    private var tasks: [DLTask]
+}
+
+extension Date {
+    
+    var tasks: [DLTask] {
+        return DLSharedTasksRepository.shared.fetchTasks()
+    }
+    
+    
+    
+    func taskCompleted() -> Bool {
+        for task in tasks {
+            if task.completedFor(self) {
+                
+            }
+        }
+        return false
+    }
+}
+
+extension Calendar {
+    
+    func dateHasTasks(tasks: [DLTask], date: Date) -> Bool {
+        for task in tasks {
+            if self.isDate(date, inSameDayAs: task.startDate ?? Date()) {
+                return true
+            }
+        }
         
+        return false
+    }
+    
+    func areTasksCompletedFor(tasks: [DLTask], date: Date) -> Bool {
+        let completedArray = tasks.map {
+            $0.streakCompleted == true
+        }
+        guard completedArray.count != tasks.count else {
+            return true
+        }
+        return false
+    }
+    
+    func numberOfTasksInDate(tasks: [DLTask], date: Date) -> Int {
+        var count: Int = 0
+        for task in tasks {
+            if self.isDate(date, inSameDayAs: task.startDate ?? Date()) {
+                count += 1
+            }
+        }
+        return count
     }
 }

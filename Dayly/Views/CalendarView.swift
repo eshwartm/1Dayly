@@ -17,7 +17,7 @@ struct CalendarView: View {
     @State private var selectedDate = Self.now
     private static var now = Date()
     
-    var activities: [DLActivity] = []
+    var tasks: [DLTask] = []
     
     init(calendar: Calendar) {
         self.calendar = calendar
@@ -41,14 +41,14 @@ struct CalendarView: View {
                                 .frame(width: 33, height: 33)
                                 .foregroundColor(calendar.isDateInToday(date) ? Color.white : .primary)
                                 .background(
-                                    calendar.isDateInToday(date) ? Color.red
+                                    calendar.isDateInToday(date) ? Color.orange
                                     : calendar.isDate(date, inSameDayAs: selectedDate) ? .blue
                                     : .clear
                                 )
                                 .cornerRadius(7)
                         }
                         
-                        if (numberOfEventsInDate(date: date) >= 2) {
+                        if (numberOfTasksInDate(date: date) >= 2) {
                             Circle()
                                 .size(CGSize(width: 5, height: 5))
                                 .foregroundColor(Color.green)
@@ -56,7 +56,7 @@ struct CalendarView: View {
                                         y: CGFloat(33))
                         }
                         
-                        if (numberOfEventsInDate(date: date) >= 1) {
+                        if (numberOfTasksInDate(date: date) >= 1) {
                             Circle()
                                 .size(CGSize(width: 5, height: 5))
                                 .foregroundColor(Color.green)
@@ -64,7 +64,7 @@ struct CalendarView: View {
                                         y: CGFloat(33))
                         }
                         
-                        if (numberOfEventsInDate(date: date) >= 3) {
+                        if (numberOfTasksInDate(date: date) >= 3) {
                             Circle()
                                 .size(CGSize(width: 5, height: 5))
                                 .foregroundColor(Color.green)
@@ -150,10 +150,9 @@ struct CalendarView: View {
         }
     }
     
-    func dateHasEvents(date: Date) -> Bool {
-        
-        for activity in activities {
-            if calendar.isDate(date, inSameDayAs: activity.startDate ?? Date()) {
+    func dateHasTasks(date: Date) -> Bool {
+        for task in tasks {
+            if calendar.isDate(date, inSameDayAs: task.startDate ?? Date()) {
                 return true
             }
         }
@@ -161,10 +160,20 @@ struct CalendarView: View {
         return false
     }
     
-    func numberOfEventsInDate(date: Date) -> Int {
+    func areTasksCompletedFor(date: Date) -> Bool {
+        let completedArray = tasks.map {
+            $0.streakCompleted == true
+        }
+        guard completedArray.count != tasks.count else {
+            return true
+        }
+        return false
+    }
+    
+    func numberOfTasksInDate(date: Date) -> Int {
         var count: Int = 0
-        for activity in activities {
-            if calendar.isDate(date, inSameDayAs: activity.startDate ?? Date()) {
+        for task in tasks {
+            if calendar.isDate(date, inSameDayAs: task.startDate ?? Date()) {
                 count += 1
             }
         }
@@ -188,7 +197,7 @@ public struct CalendarViewComponent<Day: View, Header: View, Title: View, Traili
     // Constants
     private let daysInWeek = 7
     
-    var activities: [DLActivity] = [] // FetchedResults<Entry>
+    var tasks: [DLTask] = [] // FetchedResults<Entry>
     
     public init(
         calendar: Calendar,
@@ -205,7 +214,7 @@ public struct CalendarViewComponent<Day: View, Header: View, Title: View, Traili
         self.header = header
         self.title = title
         
-        activities = [] /*FetchRequest<Entry>(sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: false)],
+        tasks = [] /*FetchRequest<Entry>(sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: false)],
                                      predicate: NSPredicate(
                                         format: "timestamp >= %@ && timestamp <= %@",
                                         Calendar.current.startOfDay(for: date.wrappedValue) as CVarArg,

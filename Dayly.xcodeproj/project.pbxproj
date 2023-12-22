@@ -23,6 +23,7 @@
 		705354012B28AA1A00B18DB3 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705354002B28AA1A00B18DB3 /* StreakView.swift */; };
 		705354032B28BB8500B18DB3 /* AddDailyActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705354022B28BB8500B18DB3 /* AddDailyActivityView.swift */; };
 		705354052B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705354042B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift */; };
+		7066E3822B345AEA00B03E83 /* DLSharedTasksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066E3812B345AEA00B03E83 /* DLSharedTasksRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		705354002B28AA1A00B18DB3 /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
 		705354022B28BB8500B18DB3 /* AddDailyActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDailyActivityView.swift; sourceTree = "<group>"; };
 		705354042B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLSettingSwitchToggleView.swift; sourceTree = "<group>"; };
+		7066E3812B345AEA00B03E83 /* DLSharedTasksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLSharedTasksRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				705353F42B28967400B18DB3 /* DLActivity.swift */,
+				7066E3812B345AEA00B03E83 /* DLSharedTasksRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				705353FF2B28A7D100B18DB3 /* DayView.swift in Sources */,
 				705353FC2B289A6600B18DB3 /* DLDayViewModel.swift in Sources */,
 				705354012B28AA1A00B18DB3 /* StreakView.swift in Sources */,
+				7066E3822B345AEA00B03E83 /* DLSharedTasksRepository.swift in Sources */,
 				70479F5D2B28490D0031C364 /* ContentView.swift in Sources */,
 				705353FA2B289A4A00B18DB3 /* DLCalendarViewModel.swift in Sources */,
 				70479F5B2B28490D0031C364 /* DaylyApp.swift in Sources */,

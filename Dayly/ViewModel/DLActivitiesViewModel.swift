@@ -1,5 +1,5 @@
 //
-//  DLActivitiesViewModel.swift
+//  DLTasksViewModel.swift
 //  Dayly
 //
 //  Created by Eshwar Ramesh on 12/12/23.
@@ -7,18 +7,18 @@
 
 import Foundation
 
-class DLActivitiesViewModel: ObservableObject {
+class DLTasksViewModel: ObservableObject {
     
-    @Published var activities = [DLActivity]()
+    @Published var tasks = [DLTask]()
     
-    init(activities: [DLActivity] = [DLActivity]()) {
-        self.activities = activities
+    init(tasks: [DLTask] = [DLTask]()) {
+        self.tasks = tasks
     }
     
     func load() {
-        self.activities = [
-            DLActivity(id: UUID(), title: "Yoga", reminder: true, streak: 2, completed: false),
-            DLActivity(id: UUID(), title: "Carnatic Music", reminder: true, streak: 4, completed: false)
+        self.tasks = [
+            DLTask(id: UUID(), title: "Yoga", reminder: true, streak: 2, streakCompleted: false),
+            DLTask(id: UUID(), title: "Carnatic Music", reminder: true, streak: 4, streakCompleted: false)
         ]
     }
     

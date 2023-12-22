@@ -11,7 +11,7 @@ import SwiftUI
 struct DaylyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: DLActivitiesViewModel())   
+            ContentView(viewModel: DLTasksViewModel())   
         }
     }
 }

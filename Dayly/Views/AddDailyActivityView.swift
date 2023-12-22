@@ -1,5 +1,5 @@
 //
-//  AddDailyActivityView.swift
+//  AddDailyTaskView.swift
 //  Dayly
 //
 //  Created by Eshwar Ramesh on 12/12/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddDailyActivityView: View {
+struct AddDailyTaskView: View {
     
     @State var title: String
     @State var description: String = "Description"
@@ -17,7 +17,7 @@ struct AddDailyActivityView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Title of Activity", text: $title)
+                TextField("Title of Task", text: $title)
                 TextEditor(text: $description)
                     .frame(height: 300)
                 DatePicker("Date", selection: $date)
@@ -30,5 +30,5 @@ struct AddDailyActivityView: View {
 }
 
 #Preview {
-    AddDailyActivityView(title: "", description: "Add a Description...", date: Date(), reminder: true)
+    AddDailyTaskView(title: "", description: "Add a Description...", date: Date(), reminder: true)
 }

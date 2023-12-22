@@ -10,7 +10,7 @@ import UserNotifications
 
 struct ContentView: View {
     
-    @ObservedObject var viewModel: DLActivitiesViewModel
+    @ObservedObject var viewModel: DLTasksViewModel
     @State private var isPresentingAddTaskView = false
     @State private var dayStreak: Int = 0
     
@@ -34,7 +34,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $isPresentingAddTaskView) {
-                AddDailyActivityView(title: "", date: Date(), reminder: true)
+                AddDailyTaskView(title: "", date: Date(), reminder: true)
             }
         }
         .onAppear(perform: {
@@ -73,5 +73,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(viewModel: DLActivitiesViewModel())
+    ContentView(viewModel: DLTasksViewModel())
 }
