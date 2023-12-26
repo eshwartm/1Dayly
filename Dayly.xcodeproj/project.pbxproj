@@ -24,6 +24,7 @@
 		705354032B28BB8500B18DB3 /* AddDailyActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705354022B28BB8500B18DB3 /* AddDailyActivityView.swift */; };
 		705354052B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705354042B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift */; };
 		7066E3822B345AEA00B03E83 /* DLSharedTasksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066E3812B345AEA00B03E83 /* DLSharedTasksRepository.swift */; };
+		7066E3852B3ABDDE00B03E83 /* DLPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066E3842B3ABDDE00B03E83 /* DLPersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		705354022B28BB8500B18DB3 /* AddDailyActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDailyActivityView.swift; sourceTree = "<group>"; };
 		705354042B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLSettingSwitchToggleView.swift; sourceTree = "<group>"; };
 		7066E3812B345AEA00B03E83 /* DLSharedTasksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLSharedTasksRepository.swift; sourceTree = "<group>"; };
+		7066E3842B3ABDDE00B03E83 /* DLPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLPersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		70479F592B28490D0031C364 /* Dayly */ = {
 			isa = PBXGroup;
 			children = (
+				7066E3832B3ABDC700B03E83 /* Persistence */,
 				70479F5A2B28490D0031C364 /* DaylyApp.swift */,
 				705353FD2B28A67D00B18DB3 /* Views */,
 				705353F62B2898DB00B18DB3 /* ViewModel */,
@@ -153,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				705353F42B28967400B18DB3 /* DLActivity.swift */,
-				7066E3812B345AEA00B03E83 /* DLSharedTasksRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +181,15 @@
 				705354042B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7066E3832B3ABDC700B03E83 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				7066E3812B345AEA00B03E83 /* DLSharedTasksRepository.swift */,
+				7066E3842B3ABDDE00B03E83 /* DLPersistenceManager.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7066E3852B3ABDDE00B03E83 /* DLPersistenceManager.swift in Sources */,
 				705353F82B2899AB00B18DB3 /* DLActivitiesViewModel.swift in Sources */,
 				705354052B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift in Sources */,
 				705353FF2B28A7D100B18DB3 /* DayView.swift in Sources */,

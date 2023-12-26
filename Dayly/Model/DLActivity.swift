@@ -13,7 +13,7 @@ protocol DLTaskProtocol {
     var description: String? {get}
     var reminder: Bool {get}
     var streak: Int {get}
-    var startDate: Date? {get}
+    var startDate: Date {get}
     var endDate: Date? {get}
     var streakCompleted: Bool {get}
     
@@ -26,7 +26,7 @@ struct DLTask: DLTaskProtocol, Identifiable {
     var title: String
     var description: String?
     var reminder: Bool
-    var startDate: Date?
+    var startDate: Date
     var endDate: Date?
     var streak: Int
     var latestCompletionDate: Date?
@@ -34,6 +34,10 @@ struct DLTask: DLTaskProtocol, Identifiable {
         
     mutating func markCompletedFor(date: Date) {
         self.latestCompletionDate = date
+    }
+    
+    func completedFor(date: Date) {
+        if date.
     }
 }
 
@@ -44,18 +48,29 @@ struct DLTasks {
 extension Date {
     
     var tasks: [DLTask] {
-        return DLSharedTasksRepository.shared.fetchTasks()
+        return DLSharedTasksRepository.shared.fetchTaskFor(date: self)
     }
     
-    
-    
-    func taskCompleted() -> Bool {
-        for task in tasks {
-            if task.completedFor(self) {
-                
-            }
+    func completionStatusForTaskId(id: UUID) -> Bool {
+        var tasksWithId = tasks.filter { $0.id == id }
+        if var task = tasksWithId.first {
+            task.
         }
+            
         return false
+    }
+    
+    func updateStatusForTaskWith(id: UUID) {
+        var tasksWithId = tasks.filter { $0.id == id }
+        if var task = tasksWithId.first {
+            task.markCompletedFor(date: self)
+        }
+    }
+    
+    func markAllTasksCompleted() {
+        for var eachTask in tasks {
+            eachTask.markCompletedFor(date: self)
+        }
     }
 }
 
@@ -63,7 +78,7 @@ extension Calendar {
     
     func dateHasTasks(tasks: [DLTask], date: Date) -> Bool {
         for task in tasks {
-            if self.isDate(date, inSameDayAs: task.startDate ?? Date()) {
+            if self.isDate(date, inSameDayAs: task.startDate) {
                 return true
             }
         }
@@ -84,7 +99,7 @@ extension Calendar {
     func numberOfTasksInDate(tasks: [DLTask], date: Date) -> Int {
         var count: Int = 0
         for task in tasks {
-            if self.isDate(date, inSameDayAs: task.startDate ?? Date()) {
+            if self.isDate(date, inSameDayAs: task.startDate) {
                 count += 1
             }
         }

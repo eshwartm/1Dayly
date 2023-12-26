@@ -152,7 +152,7 @@ struct CalendarView: View {
     
     func dateHasTasks(date: Date) -> Bool {
         for task in tasks {
-            if calendar.isDate(date, inSameDayAs: task.startDate ?? Date()) {
+            if calendar.isDate(date, inSameDayAs: task.startDate) {
                 return true
             }
         }
@@ -173,7 +173,7 @@ struct CalendarView: View {
     func numberOfTasksInDate(date: Date) -> Int {
         var count: Int = 0
         for task in tasks {
-            if calendar.isDate(date, inSameDayAs: task.startDate ?? Date()) {
+            if calendar.isDate(date, inSameDayAs: task.startDate) {
                 count += 1
             }
         }

@@ -11,9 +11,37 @@ class DLSharedTasksRepository {
     
     static let shared = DLSharedTasksRepository()
     private var tasks: [DLTask] = []
+    private var taskWithDateInfo: [Date: [UUID: Bool]] = [:]
     
-    func fetchTasks() -> [DLTask] {
+    func loadTaskAndDateInfo() -> [Date: [UUID: Bool]] {
+        taskWithDateInfo = [:] // DLPersistenceManager.fetchTaskAndDates()
+        return taskWithDateInfo
+    }
+    
+    func fetchAll() -> [DLTask] {
         return tasks
+    }
+    
+    func fetchTaskFor(id: UUID) -> DLTask? {
+        tasks.filter { $0.id == id }.first
+    }
+    
+    func fetchTaskFor(date: Date) -> [DLTask] {
+        tasks.filter { task in
+            if task.startDate <= Date()
+            {
+                if let endDate = task.endDate
+                {
+                    if endDate <= Date() {
+                        return true
+                    }
+                }
+                else {
+                    return true
+                }
+            }
+            return false
+        }
     }
     
     func addTask(task: DLTask) {
@@ -38,5 +66,12 @@ class DLSharedTasksRepository {
         taskToUpdate.streak = task.streak
         taskToUpdate.latestCompletionDate = task.latestCompletionDate
         taskToUpdate.streakCompleted = task.streakCompleted
+    }
+    
+    func completeTask(withId id: UUID, forDate date: Date) {
+        if var taskInfo = taskWithDateInfo[date]
+        {
+            taskInfo[id] = true
+        }
     }
 }
