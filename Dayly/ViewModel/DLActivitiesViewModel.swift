@@ -17,8 +17,8 @@ class DLTasksViewModel: ObservableObject {
     
     func load() {
         self.tasks = [
-            DLTask(id: UUID(), title: "Yoga", reminder: true, streak: 2, streakCompleted: false),
-            DLTask(id: UUID(), title: "Carnatic Music", reminder: true, streak: 4, streakCompleted: false)
+            DLTask(id: UUID(), title: "Yoga", reminder: true, startDate: Date(), streak: 0, streakCompleted: false),
+            DLTask(id: UUID(), title: "Carnatic Music", reminder: true, startDate: Date(), streak: 0, streakCompleted: false)
         ]
     }
     
