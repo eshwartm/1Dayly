@@ -26,6 +26,9 @@ struct AddDailyTaskView: View {
             .padding()
             .navigationTitle("Add")
         }
+        .onAppear(perform: {
+            registerForLocalNotificationsPermission()
+        })
     }
 }
 

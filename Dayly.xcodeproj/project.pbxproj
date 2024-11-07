@@ -28,6 +28,7 @@
 		7066E38D2B3AE9B200B03E83 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7066E38C2B3AE9B200B03E83 /* Realm */; };
 		7066E38F2B3AE9B200B03E83 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7066E38E2B3AE9B200B03E83 /* RealmSwift */; };
 		7066E3922B3E9E7400B03E83 /* DLErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066E3912B3E9E7400B03E83 /* DLErrorHandling.swift */; };
+		70A14F3A2CDCFBAB00B4F8C0 /* DLTaskInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A14F392CDCFBAB00B4F8C0 /* DLTaskInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		7066E3812B345AEA00B03E83 /* DLTasksStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLTasksStorageManager.swift; sourceTree = "<group>"; };
 		7066E3842B3ABDDE00B03E83 /* DLPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLPersistenceManager.swift; sourceTree = "<group>"; };
 		7066E3912B3E9E7400B03E83 /* DLErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLErrorHandling.swift; sourceTree = "<group>"; };
+		70A14F392CDCFBAB00B4F8C0 /* DLTaskInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLTaskInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				705354002B28AA1A00B18DB3 /* StreakView.swift */,
 				705353FE2B28A7D100B18DB3 /* DayView.swift */,
 				705354042B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift */,
+				70A14F392CDCFBAB00B4F8C0 /* DLTaskInputView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7066E3852B3ABDDE00B03E83 /* DLPersistenceManager.swift in Sources */,
+				70A14F3A2CDCFBAB00B4F8C0 /* DLTaskInputView.swift in Sources */,
 				705353F82B2899AB00B18DB3 /* DLActivitiesViewModel.swift in Sources */,
 				705354052B28BD7000B18DB3 /* DLSettingSwitchToggleView.swift in Sources */,
 				705353FF2B28A7D100B18DB3 /* DayView.swift in Sources */,

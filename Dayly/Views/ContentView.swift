@@ -37,9 +37,6 @@ struct ContentView: View {
                 AddDailyTaskView(title: "", date: Date(), reminder: true)
             }
         }
-        .onAppear(perform: {
-            registerForLocalNotificationsPermission()
-        })
     }
     
     func registerForLocalNotificationsPermission() {
